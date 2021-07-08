@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react"; //useState permite citar e modificar estados
 
 // JSX (html dentro do JS)
 function App(props) {
+  //const [usuario, setUsuario] = useState('Joca')
   return (
-  <div>
-    <h1> { props.title } { props.user } </h1>
+  <>
     <input name="usuario" id="usuario"className="usuarioInput" placeholder="Usuário"/>
-  </div>
+    <button type="button">Pesquisar</button>
+  </>
   );
 }
 
 export default App;
+
+// useState [ usuario, setUsuario ]
+// componentes, estados, propriedades
