@@ -1,9 +1,11 @@
 import React, { useState } from "react"; //useState permite citar e modificar estados
 import axios from 'axios';
 import * as S from './styled';
+import { useHistory } from 'react-router-dom';
 
 // JSX (html dentro do JS)
 function App(props) {
+  const history = useHistory();
   const [ usuario, setUsuario ] = useState('');
   
   function handlePesquisa(){
@@ -14,6 +16,7 @@ function App(props) {
         repositoriesName.push(repository.name);
       });
       localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
+      history.push('/repositories')
   });
 }
   return (
