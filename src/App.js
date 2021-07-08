@@ -1,24 +1,18 @@
-import React, { useState } from "react"; //useState permite citar e modificar estados
-import axios from 'axios';
+import React from "react";
+import Routes from './routes';
+
+import './style.css';
 
 // JSX (html dentro do JS)
-function App(props) {
-  const [ usuario, setUsuario ] = useState('');
-  
-  function handlePesquisa(){
-    axios.get(`https://api.github.com/users/${usuario}/repos`).then(response => console.log(response));
-  }
+function App() {
+
 
   return (
-    <div>
-      <input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={ e => setUsuario(e.target.value)}/>
-      <button type="button" onClick={handlePesquisa}>Pesquisar</button>
-    </div>
+    <Routes />
+    
   );
 }
 
 export default App;
 
-// useState [ usuario, setUsuario ]
-// componentes, estados, propriedades
 
